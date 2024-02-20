@@ -63,14 +63,14 @@ namespace ConsoleApp3
             }
             else if (b == 0 && c != 0)
             {
-                if (c < 0)
+                if ((c < 0 && a > 0) || (c > 0 && a < 0))
                 {
                     x1 = -(Math.Sqrt(-c / a));
                     x2 = (Math.Sqrt(-c / a));
                     Console.WriteLine($"x1 = {x1}");
                     Console.WriteLine($"x2 = {x2}");
                 }
-                else
+                else if ((c < 0 && a < 0) || (c > 0 && a > 0))
                 {
                     Console.WriteLine($"x1 = {Math.Sqrt(Math.Abs(c / a))}i");
                     Console.WriteLine($"x2 = - {Math.Sqrt(Math.Abs(c / a))}i");
@@ -80,6 +80,8 @@ namespace ConsoleApp3
             {
                 x1 = 0;
                 x2 = -b / a;
+                Console.WriteLine($"x1 = {x1}");
+                Console.WriteLine($"x2 = {x2}");
             }
             Console.ReadKey();
         }
